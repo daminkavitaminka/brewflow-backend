@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barista Dashboard | BrewFlow</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for Dashboard */
+        .dashboard-container {
+            padding: 2rem 5%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .order-card {
+            background: white;
+            border-left: 5px solid var(--coffee-dark);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-pending {
+            background: #ffeeba;
+            color: #856404;
+        }
+
+        .status-brewing {
+            background: #b8daff;
+            color: #004085;
+        }
+
+        .status-ready {
+            background: #c3e6cb;
+            color: #155724;
+        }
+
+        .action-btn {
+            margin-left: 5px;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+        }
+
+        .menu-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .menu-form h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">BrewFlow Staff ☕</div>
+        <div class="nav-links">
+            <a href="index.html">Back to Home</a>
+            <button id="logoutBtn" class="btn-secondary">Logout</button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+
+        <section>
+            <h2>Incoming Orders</h2>
+            <div id="orders-list">
+                <p class="loading">Loading orders...</p>
+            </div>
+        </section>
+
+        <aside>
+            <div class="menu-form">
+                <h3>Add New Item</h3>
+                <form id="add-product-form">
+                    <input type="text" id="p-name" placeholder="Product Name" required>
+                    <input type="text" id="p-desc" placeholder="Description" required>
+                    <input type="number" id="p-price" placeholder="Price ($)" step="0.01" required>
+                    <select id="p-category"
+                        style="width:100%; padding:10px; margin:8px 0; border:1px solid #ddd; border-radius:8px;">
+                        <option value="hot coffee">Hot Coffee</option>
+                        <option value="iced coffee">Iced Coffee</option>
+                        <option value="pastry">Pastry</option>
+                    </select>
+                    <button type="submit" class="btn-primary full-width">Add to Menu</button>
+                </form>
+                <div class="menu-list"
+                    style="margin-top: 2rem; background: white; padding: 2rem; border-radius: 10px; box-shadow: var(--shadow);">
+                    <h3>Manage Menu</h3>
+                    <div id="barista-menu-container">
+                        <p>Loading menu...</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <script src="barista.js"></script>
+</body>
+
+</html>
