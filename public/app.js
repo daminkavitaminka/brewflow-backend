@@ -1,4 +1,4 @@
-const API_URL = 'https://brewflow-api.onrender.com';
+const API_URL = 'https://brewflow-api.onrender.com/api';
 let token = localStorage.getItem('token');
 let user = localStorage.getItem('user');
 let allProducts = [];
