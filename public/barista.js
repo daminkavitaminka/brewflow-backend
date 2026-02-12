@@ -1,4 +1,4 @@
-const API_URL = 'https://brewflow-api.onrender.com'; // <--- MAKE SURE THIS IS YOUR RENDER LINK
+const API_URL = 'https://brewflow-api.onrender.com/api'; // <--- MAKE SURE THIS IS YOUR RENDER LINK
 const token = localStorage.getItem('token');
 const user = JSON.parse(localStorage.getItem('user'));
 
